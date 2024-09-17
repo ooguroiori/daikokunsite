@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+.cards{
+    height: 550px;
+    display: flex;
+    justify-content: center; /* 水平方向に中央揃え */
+    padding-top: 70px;
+    flex-wrap: nowrap; /* 折り返しを無効にする */
+    overflow-x: auto; /* 横方向のスクロールを許可 */
+    gap: 10px; /* アイテム間の隙間 */
+    // opacity: 0;
+    // transform: translateY(20px);
+    // transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    // &.is-animated {
+    //     opacity: 1;
+    //     transform: translate3d(0, 0, 0);
+    // }
+}
+
+/* スクロールバーを非表示にする */
+.cards::-webkit-scrollbar {
+    display: none; /* WebKitブラウザ（Chrome, Safari, Edge）用 */
+}
+
+.cards img{
+    width: 80px;
+    margin-bottom: 50px;
+}
+
+:root{
+--color-text: #616161;
+--color-text-btn: #ffffff;
+--card1-gradient-color1: #f12711;
+--card1-gradient-color2: #f5af19;
+--card2-gradient-color1: #7F00FF;
+--card2-gradient-color2: #E100FF;
+--card3-gradient-color1: #3f2b96;
+--card3-gradient-color2: #a8c0ff;
+--card4-gradient-color1: #11998e;
+--card4-gradient-color2: #38ef7d;
+}
+
+/* デフォルトでは opacity: 0 で隠れている */
+.card-one,
+.card-two,
+.card-three,
+.card-four {
+    opacity: 0;
+}
+
+/* is-animated クラスが追加されたときにアニメーションを開始 */
+.is-animated {
+    // opacity: 1;
+    animation: fadeInFromBottom 0.7s forwards;
+}
+
+.card-wrap {
+    padding-bottom: 30px;
+    margin: 0 10px; /* 横方向の余白を追加 */
+    width: 220px; /* カードの幅 */
+    height: 400px;
+    background: #fff;
+    border-radius: 20px;
+    border: 5px solid #fff;
+    overflow: hidden;
+    color: var(--color-text);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+                rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    flex-shrink: 0; /* 要素が縮まないようにする */
+}
+
+.card-wrap:hover{
+transform: scale(1.1);
+}
+
+.card-header{
+    height: 200px;
+    width: 100%;
+    background: red;
+    border-radius:100% 0% 100% 0% / 0% 50% 50% 100%;
+    display: grid;
+    place-items: center;
+}
+
+.card-header i{
+    color: #fff;
+    font-size: 72px;
+}
+
+.card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.card-title{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.card-text{
+    text-align: left;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+.card-btn{
+    border: none;
+    border-radius: 100px;
+    padding: 5px 30px;
+    color: #fff;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.card-header.one{
+    background: linear-gradient(to bottom left, var(--card1-gradient-color1), var(--card1-gradient-color2));
+}
+.card-header.two{
+    background: linear-gradient(to bottom left, var(--card2-gradient-color1), var(--card2-gradient-color2));
+}
+.card-header.three{
+    background: linear-gradient(to bottom left, var(--card3-gradient-color1), var(--card3-gradient-color2));
+}
+.card-header.four{
+    background: linear-gradient(to bottom left, var(--card4-gradient-color1), var(--card4-gradient-color2));
+}
+
+.card-btn.one{
+    background: linear-gradient(to left, var(--card1-gradient-color1), var(--card1-gradient-color2));
+}
+.card-btn.two{
+    background: linear-gradient(to left, var(--card2-gradient-color1), var(--card2-gradient-color2));
+}
+.card-btn.three{
+    background: linear-gradient(to left, var(--card3-gradient-color1), var(--card3-gradient-color2));
+}
+.card-btn.four{
+    background: linear-gradient(to left, var(--card4-gradient-color1), var(--card4-gradient-color2));
+}
+
+@media (max-width: 900px) {
+    .cards{
+        justify-content: flex-start; /* 左揃え */
+        height: 500px;
+    }
+
+    .cards img{
+        width: 50px;
+        margin-bottom: 30px;
+    }
+
+    .card-wrap {
+        margin: 0 10px; /* 横方向の余白を追加 */
+        width: 180px; /* カードの幅 */
+        height: 350px;
+    }
+    
+    .card-header{
+        height: 120px;
+        width: 100%;
+    }
+}

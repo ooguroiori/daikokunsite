@@ -1,0 +1,255 @@
+*{box-sizing: border-box;}
+
+@mixin backlight($x, $y, $spread, $size, $colorA, $colorB, $duration) {
+    &:after {
+        position: absolute;
+        content: "";
+        top: $y;
+        left: $x;
+        right: 0;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        margin: 0 auto;
+        transform: scale($size);
+        -webkit-filter: blur($spread);
+        -moz-filter: blur($spread);
+        -ms-filter: blur($spread);
+        filter: blur($spread);
+        background: linear-gradient(270deg, $colorA, $colorB);
+        background-size: 200% 200%;
+        animation: animateGlow $duration ease infinite;
+        
+        @keyframes animateGlow {
+            0%{background-position:0% 50%}
+            50%{background-position:100% 50%}
+            100%{background-position:0% 50%}
+        }
+    }
+}
+
+.intruduction {
+    position: relative;
+    color: #ffffff;
+    background-color: #151823;
+    margin: 70px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    &.is-animated {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+.intruduction:after {
+    position: absolute;
+    content: "";
+    top: 4vw;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 90%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.75);
+    -webkit-filter: blur(8vw);
+    -moz-filter: blur(8vw);
+    -ms-filter: blur(8vw);
+    filter: blur(8vw);
+    background: linear-gradient(270deg, #0fffc1, #7e0fff);
+    background-size: 200% 200%;
+    animation: animateGlow 10s ease infinite;
+}
+
+@keyframes animateGlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+    }
+
+.intro-line {
+    display: flex;
+    justify-content: space-around;
+    border: solid 2px #502285;
+    border-radius: 5px;
+    padding: 10px;
+    margin:10px;
+    position: relative;
+    padding: 25px 30px;
+    color: white;
+    text-decoration: none;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+}
+
+.intro-line:nth-child(1) {
+    filter: none; /* hue-rotateの適用を削除 */
+}
+
+.intro-line:nth-child(2) {
+    filter: none; /* hue-rotateの適用を削除 */
+}
+
+.intro-line span {
+    position: absolute;
+    display: block;
+}
+
+$line-color: #8800ff; /* 色を統一 */
+
+.intro-line span:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, $line-color); /* 色を統一 */
+    animation: animate1 1.5s linear infinite;
+}
+
+@keyframes animate1 {
+    0% {
+        left: -100%;
+    }
+    50%, 100% {
+        left: 100%;
+    }
+}
+
+.intro-line span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, $line-color); /* 色を統一 */
+    animation: animate2 1.5s linear infinite;
+    animation-delay: 0.45s;
+}
+
+@keyframes animate2 {
+    0% {
+        top: -100%;
+    }
+    50%, 100% {
+        top: 100%;
+    }
+}
+
+.intro-line span:nth-child(3) {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(270deg, transparent, $line-color); /* 色を統一 */
+    animation: animate3 1.5s linear infinite;
+    animation-delay: 0.80s;
+}
+
+@keyframes animate3 {
+    0% {
+        right: -100%;
+    }
+    50%, 100% {
+        right: 100%;
+    }
+}
+
+.intro-line span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, $line-color); /* 色を統一 */
+    animation: animate4 1.5s linear infinite;
+    animation-delay: 1.15s;
+}
+
+@keyframes animate4 {
+    0% {
+        bottom: -100%;
+    }
+    50%, 100% {
+        bottom: 100%;
+    }
+}
+
+
+.intro-title {
+    display: flex;
+    opacity: 0;
+    animation: fontslide 0.7s ease-out 0.3s forwards; /* アニメーション名、期間、イージング、遅延、終了後の状態 */
+}
+
+.intro-title img {
+    width: 60px;
+    height: 60px;
+}
+
+.intro-title h2 {
+    margin-left: 10px;
+}
+
+.mb-intro-img {
+    display: none;
+}
+
+.intro-img img{
+    opacity: 0;
+    animation: fadeInFromBottom 0.7s ease-out 0.9s forwards; /* アニメーション名、期間、イージング、遅延、終了後の状態 */
+    width: 95%;
+    max-width: 1200px;
+    border: solid 5px #fff;
+}
+
+.intro-txt{
+    padding-right: 20px;
+}
+
+.intro-subtxt {
+    opacity: 0;
+    animation: fontslide 0.7s ease-out 0.6s forwards; /* アニメーション名、期間、イージング、遅延、終了後の状態 */
+}
+
+/* レスポンシブ対応: 900px以下の画面では中央揃えにして一列表示 */
+@media (max-width: 900px) {
+    .intruduction:after {
+        -webkit-filter: none;
+        filter: none;
+        background: none;
+        height: 110%;
+    }
+
+    .intro-title {
+        justify-content: center;
+    }
+
+    .intro-line {
+        display: block;
+    }
+
+    .mb-intro-img{
+        display: block;
+        opacity: 0;
+        animation: fadeInFromBottom 0.7s forwards; /* アニメーション名、期間、イージング、遅延、終了後の状態 */
+    }
+
+    .mb-intro-img img{
+        width: 100%;
+        border: solid 5px #fff;
+    }
+
+    .intro-img img{
+        display: none;
+    }
+
+    .intro-txt{
+        padding-right: 0px;
+    }
+    
+}

@@ -1,0 +1,32 @@
+$border1: rgb(20, 20, 20);
+$border2: rgb(60, 39, 107);
+$border3: rgb(57, 28, 138);
+
+.heading {
+    position: relative;
+    width: 40%;
+    padding: 5px 25px;
+    margin: 30px 20px;
+    font-family: "DotGothic16", sans-serif;
+    font-weight: normal;
+    border-bottom: 2px solid; /* ボーダーの太さを指定 */
+    border-image: linear-gradient(to left, $border1, $border2, $border3) 1; /* グラデーション */
+    animation: fontslide 1.6s; /* アニメーションの設定 */
+}
+
+.heading:before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #823bdf; /* ここは既存のスタイルを保持 */
+    position: absolute;
+    top: 18px;
+    left: 3px;
+    transform: rotate(45deg);
+}
+.subtxt{
+    padding: 0 20px;
+    font-weight: normal;
+    animation: fontslide 1.6s; /* アニメーションの設定 */
+}

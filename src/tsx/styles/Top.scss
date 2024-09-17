@@ -1,0 +1,53 @@
+.logos{
+    display: flex;
+    align-items: center; /* 垂直方向に中央揃え */
+    padding: 20px 20px;
+}
+
+.logotxt{
+    padding-left: 60px;
+    color:rgb(168, 168, 168);
+}
+
+.profile{
+    display: flex;
+    justify-content: center; /* 水平方向に中央揃え */
+    align-items: center; /* 垂直方向に中央揃え */
+    padding-top: 50px;
+}
+
+.profileimg{
+    animation: slide-inL 0.7s ease-out forwards; /* 画像を左からスライドイン */
+    transition: transform 0.3s ease; /* 拡大時のアニメーションを追加 */
+}
+
+.profileimg:hover{ 
+    transform: scale(1.2); /* 画像を1.2倍に拡大 */
+}
+
+.profiletxt{
+    font-family: "DotGothic16", sans-serif;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    animation: slide-inR 0.7s ease-out forwards;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+/* スマホ向けのスタイル */
+@media (max-width: 900px) {
+    .profile{
+        padding-top: 20px;
+    }
+    .profileimg{
+        width: 100px;
+    }
+
+    .profiletxt{
+        font-size: 12px;
+    }
+}

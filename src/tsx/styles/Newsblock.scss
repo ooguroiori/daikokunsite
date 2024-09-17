@@ -1,0 +1,74 @@
+.newscard {
+    display: flex;
+    width: 80%;
+    margin: 50px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #2929298c;
+}
+
+.newscard img {
+    width: 180px;
+    height: 180px;
+    margin: auto 0;
+    margin-right: 20px;
+}
+
+.newsdetail {
+    display: flex;
+    flex-direction: column;  /* 縦に並べる */
+    justify-content: flex-start;  /* 上に揃える */
+    flex-grow: 1;  /* 高さを最大限広げる */
+}
+
+.newsdetail h2, .newsdetail p {
+    margin: 10px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;  /* 折り返しを有効にする */
+    align-items: flex-end;  /* タグを下に揃える */
+    margin-top: auto;  /* 自動的に上の要素を押し上げて下部に固定 */
+    gap: 10px;  /* タグ間にスペースを追加 */
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+    .newscard {
+        display: block;
+        width: 80%;
+        margin: 50px;
+        padding: 10px 20px;
+        border-radius: 10px;
+        background-color: #2929298c;
+    }
+    
+    .newscard img {
+        width: 100%;
+        height: auto;
+        padding:10px 50px;
+        margin: auto 0;
+        margin-right: 0px;
+    }
+
+    .newsdetail h2, .newsdetail p {
+        margin: 5px;
+    }    
+
+    .newsdetail h2 {
+        font-size: 20px;
+    }
+
+    .newsdetail p {
+        font-size: 14px;
+    }
+
+    .tags {
+        font-size: 14px;
+        gap: 10px;  /* タグ間にスペースを追加 */
+        margin-bottom: 10px;
+        padding-top: 10px;
+    }
+}

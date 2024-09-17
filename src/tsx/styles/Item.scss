@@ -1,0 +1,75 @@
+$radius: 3px;
+
+/* コンテナ全体のスタイル */
+.item-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+    padding: 10px;
+    padding-top: 60px;
+}
+
+/* 個々のアイテムのスタイル */
+.animated-item {
+    max-width: 350px;
+    height: 450px;
+    background-color: #303030;
+    color: #fff;
+    margin-bottom: 20px;
+    border-radius: $radius;
+    opacity: 0; /* 初期状態は非表示 */
+    transform: translateY(30px); /* 少し下から始める */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+
+    &.visible {
+        opacity: 1;
+        transform: translateY(0); /* フェードインアニメーション */
+    }
+
+    &:hover {
+        transform: scale(1.1); /* hover時の拡大 */
+        transition: transform 0.3s ease-in-out; /* 滑らかな拡大 */
+    }
+}
+
+/* アイテム内の画像スタイル */
+.animated-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: $radius;
+}
+
+/* テキストのスタイル */
+.item-details {
+    padding: 0 20px;
+}
+
+.item-details h2 {
+    font-size: 24px;
+}
+
+.item-details p {
+    white-space: pre-line;
+    font-size: 16px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 900px) {
+    .item-container {
+        justify-content: center;
+    }
+
+    .animated-item {
+        max-width: 270px;
+        height: 350px;
+    }
+
+    .item-details h2 {
+        font-size: 20px;
+    }
+
+    .item-details p {
+        font-size: 15px;
+    }
+}
