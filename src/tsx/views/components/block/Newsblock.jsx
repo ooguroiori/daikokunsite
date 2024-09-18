@@ -6,7 +6,7 @@ import json from "../../../../assets/data/news.json";
 const Newsblock = (props) => {
     const newsData = json;
     return (
-        <div>
+        <div className='newsdiv'>
             {/* JSONデータを基にループ */}
             {newsData.map((newsItem, index) => (
                 <div className="newscard" key={index}>

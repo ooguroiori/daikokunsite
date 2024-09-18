@@ -1,3 +1,9 @@
+.newsdiv {
+    display: grid;
+    // 要素を中央寄せ
+    place-items: center;
+}
+
 .newscard {
     display: flex;
     width: 80%;
