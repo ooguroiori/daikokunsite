@@ -19,7 +19,7 @@ const Header = (props) => {
             <Logo />
         </div>
         {/* ナビゲーションメニュー */}
-        <nav class="nav-menu">
+        <nav className="nav-menu">
             <ul>
                 {menuitems.map((item, index) => (
                     <li key={index}>
@@ -30,7 +30,7 @@ const Header = (props) => {
         </nav>
 
         {/* ハンバーガーメニュー部分 */}
-        <div class="nav">
+        <div className="nav">
             {/* ハンバーガーメニューの表示・非表示を切り替えるチェックボックス */}
             <input id="drawer_input" class="drawer_hidden" type="checkbox" />
         
@@ -38,10 +38,10 @@ const Header = (props) => {
             <label for="drawer_input" class="drawer_open"><span></span></label>
         
             {/* メニュー */}
-            <nav class="nav_content">
-            <ul class="nav_list">
+            <nav className="nav_content">
+            <ul className="nav_list">
                 {menuitems.map((item, index) => (
-                    <li class="nav_item" key={index}>
+                    <li className="nav_item" key={index}>
                         <a href={item.link}>{item.name}</a>
                     </li>
                 ))}

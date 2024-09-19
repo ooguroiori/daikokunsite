@@ -30,9 +30,9 @@ export const Top = (props) => {
           </div>
         </div>
       </Link>
-      <h2 class="heading">自己紹介</h2>
+      <h2 className="heading">自己紹介</h2>
       <Introduction />
-      <h2 class="heading">スキル</h2>
+      <h2 className="heading">スキル</h2>
       <Cards />
     </div>
   )
