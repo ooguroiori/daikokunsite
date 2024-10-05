@@ -5,7 +5,7 @@ const Item = () => {
     // アイテムデータの配列
     const items = [
         { id: 1, title: 'ホヨバの犬', description: '原神、崩壊スターレイルの育成素材の必要数を表示できるツールです。\n\nNetlifyというツールを使用して公開しています。', image: '/img/hoyodog.jpg', link: "https://hoyoverse-pet.netlify.app/" },
-        { id: 2, title: 'Coming Soon...', description: '鋭意制作中', image: '/img/Comingsoon.jpg', link: "#" }
+        { id: 2, title: 'Coming Soon...', description: '鋭意制作中', image: '/img/ComingSoon.jpg' }
     ];
 
     const itemsRef = useRef([]);
