@@ -3,7 +3,7 @@
         "title": "Coming Soon",
         "date": "2024/00/00",
         "content": "鋭意制作中",
-        "img": "./img/news/ComingSoon.jpg",
+        "img": "/img/news/ComingSoon.jpg",
         "tags": ["プログラミング", "ゲーム"]
     }
 ]
