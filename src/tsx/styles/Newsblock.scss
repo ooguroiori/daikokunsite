@@ -1,10 +1,35 @@
+.newsdiv {
+    display: grid;
+    // 要素を中央寄せ
+    place-items: center;
+}
+
+.newsdiv a{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .newscard {
     display: flex;
     width: 80%;
     margin: 50px;
     padding: 10px 20px;
     border-radius: 10px;
-    background-color: #2929298c;
+    background-color: #252525;
+    opacity: 0; /* 初期状態は非表示 */
+    transform: translateY(30px); /* 少し下から始める */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+
+    &.visible {
+        opacity: 1;
+        transform: translateY(0); /* フェードインアニメーション */
+    }
+
+    &:hover {
+        transform: scale(1.1); /* hover時の拡大 */
+        transition: transform 0.3s ease-in-out; /* 滑らかな拡大 */
+    }
 }
 
 .newscard img {
