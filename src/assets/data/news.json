@@ -1,9 +1,10 @@
 [
     {
-        "title": "Coming Soon",
-        "date": "2024/00/00",
-        "content": "鋭意制作中",
-        "img": "/img/news/ComingSoon.jpg",
-        "tags": ["プログラミング", "ゲーム"]
+        "title": "Qiita記事を投稿しました",
+        "date": "2024/11/12",
+        "content": "CloudFront Functionを使用したリダイレクト機能の実装の記事を投稿しました。",
+        "img": "/img/news/qiita.jpg",
+        "tags": ["プログラミング", "AWS", "CloudFront", "JavaScript", "リダイレクト"],
+        "link": "https://qiita.com/daikokun/items/3325d6e5e37c687d520b" 
     }
 ]

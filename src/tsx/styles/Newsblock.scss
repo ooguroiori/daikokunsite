@@ -4,6 +4,12 @@
     place-items: center;
 }
 
+.newsdiv a{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .newscard {
     display: flex;
     width: 80%;

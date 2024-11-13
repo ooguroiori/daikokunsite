@@ -38,6 +38,7 @@ const Newsblock = (props) => {
         <div className='newsdiv'>
             {/* JSONデータを基にループ */}
             {newsData.map((newsItem, index) => (
+                <a href={newsItem.link} key={index} target="_blank" rel="noopener noreferrer">
                 <div key={index} className={`newscard item-${index + 1}`}
                         ref={el => itemsRef.current[index] = el}>
                     <img src={newsItem.img} alt={newsItem.title} />
@@ -52,6 +53,7 @@ const Newsblock = (props) => {
                         </div>
                     </div>
                 </div>
+                </a>
             ))}
         </div>
     );
